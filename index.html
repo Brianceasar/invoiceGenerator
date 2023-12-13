@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Invoice Generator</title>
+</head>
+<body>
+  <div class="invoice-container">
+    <!-- Invoice Header -->
+    <div class="invoice-header">
+      <!-- Your company name and logo here -->
+      <h1>Your Company Name</h1>
+      <p>Invoice #123 | Date: December 13, 2023</p>
+    </div>
+
+    <!-- Client Information -->
+    <div class="client-info" id="clientInfoSection">
+      <h2>Client Information</h2>
+      <!-- Input fields for client information -->
+      <button onclick="addClientField()">Add Client</button>
+    </div>
+
+    <!-- Itemized List -->
+    <div class="itemized-list" id="itemizedListSection">
+      <h2>Itemized List</h2>
+      <!-- Input fields for item details -->
+      <button onclick="addItemField()">Add Item</button>
+    </div>
+
+    <!-- Totals -->
+    <div class="totals" id="totalsSection">
+      <h2>Totals</h2>
+      <!-- Display subtotal, tax, and grand total -->
+      <button onclick="addTotalField()">Add Total</button>
+    </div>
+
+    <!-- Payment Information -->
+    <div class="payment-info" id="paymentInfoSection">
+      <h2>Payment Information</h2>
+      <!-- Input field for payment due date and accepted payment methods -->
+      <button onclick="addPaymentField()">Add Payment</button>
+    </div>
+
+    <!-- Additional Notes -->
+    <div class="additional-notes" id="additionalNotesSection">
+      <h2>Additional Notes</h2>
+      <!-- Input field for additional notes or terms -->
+      <button onclick="addNoteField()">Add Note</button>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+</html>
