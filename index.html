@@ -7,6 +7,22 @@
   <title>Invoice Generator</title>
 </head>
 <body>
+
+
+
+
+  <form action="submit_invoice.php" method="post">
+    <label for="clientName">Client Name:</label>
+    <input type="text" id="clientName" name="clientName" required>
+
+    <label for="itemDescription">Item Description:</label>
+    <input type="text" id="itemDescription" name="itemDescription" required>
+
+    <label for="itemCost">Item Cost:</label>
+    <input type="text" id="itemCost" name="itemCost" required>
+
+    <button type="submit">Submit Invoice</button>
+</form>
   <div class="invoice-container">
     <!-- Invoice Header -->
     <div class="invoice-header">
