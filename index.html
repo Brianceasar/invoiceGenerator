@@ -11,7 +11,7 @@
     <!-- Invoice Header -->
     <div class="invoice-header">
       <!-- Your company name and logo here -->
-      <h1>Your Company Name</h1>
+      <h1>Byte Solution</h1>
       <p>Invoice #123 | Date: December 13, 2023</p>
     </div>
 
@@ -26,7 +26,7 @@
     <div class="itemized-list" id="itemizedListSection">
       <h2>Itemized List</h2>
       <!-- Input fields for item details -->
-      <button onclick="addItemField()">Add Item</button>
+      <button onclick="addItemField(); updateTotals();">Add Item</button>
     </div>
 
     <!-- Totals -->
@@ -49,6 +49,8 @@
       <!-- Input field for additional notes or terms -->
       <button onclick="addNoteField()">Add Note</button>
     </div>
+
+    <button onclick="submitForm()">Submit Invoice</button>
   </div>
 </body>
 
