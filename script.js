@@ -4,6 +4,7 @@ function addClientField() {
     const inputField = document.createElement('input');
     inputField.type = 'text';
     inputField.placeholder = 'Client Name';
+    inputField.required = 'Client Name';
 
     // Append the input field to the client info section
     clientInfoSection.appendChild(inputField);
@@ -67,7 +68,7 @@ function addClientField() {
   // Function to calculate total with tax
   function calculateTotal() {
     const subtotal = calculateSubtotal();
-    const taxRate = 0.1; // Adjust the tax rate as needed
+    const taxRate = 0.05; 
     const tax = subtotal * taxRate;
     const grandTotal = subtotal + tax;
 
@@ -81,8 +82,54 @@ function addClientField() {
 
     // Update or create elements to display totals
     totalsSection.innerHTML = `
-      <p>Subtotal: $${subtotal.toFixed(2)}</p>
-      <p>Tax (10%): $${tax.toFixed(2)}</p>
-      <p>Grand Total: $${grandTotal.toFixed(2)}</p>
+      <p>Subtotal: Tsh${subtotal.toFixed(2)}</p>
+      <p>Tax (5%): Tsh${tax.toFixed(2)}</p>
+      <p>Grand Total: Tsh${grandTotal.toFixed(2)}</p>
     `;
+  }
+
+  // Function to validate required fields
+  function validateRequiredFields() {
+    const requiredFields = document.querySelectorAll('[data-required]');
+    let isValid = true;
+
+    requiredFields.forEach((field) => {
+      if (!field.value.trim()) {
+        isValid = false;
+        alert(`Please fill out the ${field.dataset.required} field.`);
+      }
+    });
+
+    return isValid;
+  }
+
+  // Function to validate numeric input fields
+  function validateNumericFields() {
+    const numericFields = document.querySelectorAll('[data-numeric]');
+    let isValid = true;
+
+    numericFields.forEach((field) => {
+      const fieldValue = field.value.trim();
+      if (fieldValue && !/^\d+(\.\d{1,2})?$/.test(fieldValue)) {
+        isValid = false;
+        alert(`Please enter a valid number for ${field.dataset.numeric}.`);
+      }
+    });
+
+    return isValid;
+  }
+
+  // Function to validate the entire form
+  function validateForm() {
+    return validateRequiredFields() && validateNumericFields();
+  }
+
+  // Function to submit the form
+  function submitForm() {
+    if (validateForm()) {
+      // If the form is valid, you can proceed with submitting data to the backend
+      // You might want to use AJAX or form submission, depending on your setup
+      // For now, let's just display a success message
+      alert('Invoice submitted successfully!');
+    }
   }
