@@ -25,7 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $grandTotal = $subtotal + $tax;
 
     // Insert data into the database
-    $sql = "INSERT INTO invoices (client_name, subtotal, tax, grand_total) VALUES ('$clientName', $subtotal, $tax, $grandTotal)";
+    $sql = "INSERT INTO invoices (
+        client_name, 
+        item_description, 
+        item_cost, subtotal, 
+        tax, grand_total, 
+        due_date, 
+        payment_method, 
+        additional_notes
+        ) VALUES (
+            '$clientName', 
+            '$itemDescription', 
+             $itemCost, 
+             $subtotal, 
+             $tax, 
+             $grandTotal, 
+            '$dueDate', 
+            '$paymentMethod', 
+            '$additionalNotes'
+            )";
 
     if ($conn->query($sql) === TRUE) {
         echo "Invoice submitted successfully!";
