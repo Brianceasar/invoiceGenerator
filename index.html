@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <form id="invoiceForm" action="submit_invoice.php" method="post">
+  <form id="invoiceForm" action="submit_invoice.php" method="post" onsubmit="return validateForm()">
     <!-- Client Information -->
     <label for="clientName">Client Name:</label>
-    <input type="text" id="clientName" name="clientName" required>
+    <input type="text" id="clientName" name="clientName" >
 
     <!-- Itemized List -->
     <div id="itemizedListSection">
@@ -19,10 +19,10 @@
       <!-- Initial row for item details -->
       <div class="item-row">
         <label for="itemDescription">Item Description:</label>
-        <input type="text" class="item-description" name="itemDescription[]" required>
+        <input type="text" class="item-description" name="itemDescription[]" >
 
         <label for="itemCost">Item Cost:</label>
-        <input type="text" class="item-cost" name="itemCost[]" required>
+        <input type="text" class="item-cost" name="itemCost[]" >
       </div>
       <!-- Button to add more items dynamically -->
       <button type="button" onclick="addItemField()">Add Item</button>
@@ -45,10 +45,10 @@
     <div id="paymentInfoSection">
       <h2>Payment Information</h2>
       <label for="dueDate">Due Date:</label>
-      <input type="date" id="dueDate" name="dueDate" required>
+      <input type="date" id="dueDate" name="dueDate" >
 
       <label for="paymentMethod">Payment Method:</label>
-      <select id="paymentMethod" name="paymentMethod" required>
+      <select id="paymentMethod" name="paymentMethod" >
         <option value="creditCard">Credit Card</option>
         <option value="paypal">PayPal</option>
       </select>
@@ -63,6 +63,7 @@
     <button type="submit">Submit Invoice</button>
   </form>
 
+  <script src="validateForm.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
