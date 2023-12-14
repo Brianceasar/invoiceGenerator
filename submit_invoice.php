@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
-$dbname = "byte_customers"; 
+$dbname = "billing"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $clientName = mysqli_real_escape_string($conn, $_POST['clientName']);
     
     // Process itemized list
-    $itemDescriptions = $_POST['itemDescription'];
-    $itemCosts = $_POST['itemCost'];
+    $itemDescriptions = isset($_POST['itemDescription']) ? $_POST['itemDescription'] : [];
+    $itemCosts = isset($_POST['itemCost']) ? $_POST['itemCost'] : [];
 
     // Calculate totals
     $subtotal = array_sum($itemCosts);
@@ -29,21 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         client_name, 
         item_description, 
         item_cost, subtotal, 
-        tax, grand_total, 
-        due_date, 
-        payment_method, 
-        additional_notes
+        tax, grand_total
         ) VALUES (
             '$clientName', 
-            '$itemDescription', 
-             $itemCost, 
-             $subtotal, 
-             $tax, 
-             $grandTotal, 
-            '$dueDate', 
-            '$paymentMethod', 
-            '$additionalNotes'
-            )";
+            '" . implode("','", array_map([$conn, 'real_escape_string'], $itemDescriptions)) . "', 
+            '" . implode("','", array_map([$conn, 'real_escape_string'], $itemCosts)) . "', 
+            $subtotal, 
+            $tax, 
+            $grandTotal
+        )";
 
     if ($conn->query($sql) === TRUE) {
         echo "Invoice submitted successfully!";
