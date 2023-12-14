@@ -8,67 +8,61 @@
 </head>
 <body>
 
-
-
-
-  <form action="submit_invoice.php" method="post">
+  <form id="invoiceForm" action="submit_invoice.php" method="post">
+    <!-- Client Information -->
     <label for="clientName">Client Name:</label>
     <input type="text" id="clientName" name="clientName" required>
 
-    <label for="itemDescription">Item Description:</label>
-    <input type="text" id="itemDescription" name="itemDescription" required>
-
-    <label for="itemCost">Item Cost:</label>
-    <input type="text" id="itemCost" name="itemCost" required>
-
-    <button type="submit">Submit Invoice</button>
-</form>
-  <div class="invoice-container">
-    <!-- Invoice Header -->
-    <div class="invoice-header">
-      <!-- Your company name and logo here -->
-      <h1>Byte Solution</h1>
-      <p>Invoice #123 | Date: December 13, 2023</p>
-    </div>
-
-    <!-- Client Information -->
-    <div class="client-info" id="clientInfoSection">
-      <h2>Client Information</h2>
-      <!-- Input fields for client information -->
-      <button onclick="addClientField()">Add Client</button>
-    </div>
-
     <!-- Itemized List -->
-    <div class="itemized-list" id="itemizedListSection">
+    <div id="itemizedListSection">
       <h2>Itemized List</h2>
-      <!-- Input fields for item details -->
-      <button onclick="addItemField(); updateTotals();">Add Item</button>
+      <!-- Initial row for item details -->
+      <div class="item-row">
+        <label for="itemDescription">Item Description:</label>
+        <input type="text" class="item-description" name="itemDescription[]" required>
+
+        <label for="itemCost">Item Cost:</label>
+        <input type="text" class="item-cost" name="itemCost[]" required>
+      </div>
+      <!-- Button to add more items dynamically -->
+      <button type="button" onclick="addItemField()">Add Item</button>
     </div>
 
     <!-- Totals -->
-    <div class="totals" id="totalsSection">
+    <div id="totalsSection">
       <h2>Totals</h2>
-      <!-- Display subtotal, tax, and grand total -->
-      <button onclick="addTotalField()">Add Total</button>
+      <label for="subtotal">Subtotal:</label>
+      <input type="text" id="subtotal" name="subtotal" readonly>
+
+      <label for="tax">Tax:</label>
+      <input type="text" id="tax" name="tax" readonly>
+
+      <label for="grandTotal">Grand Total:</label>
+      <input type="text" id="grandTotal" name="grandTotal" readonly>
     </div>
 
     <!-- Payment Information -->
-    <div class="payment-info" id="paymentInfoSection">
+    <div id="paymentInfoSection">
       <h2>Payment Information</h2>
-      <!-- Input field for payment due date and accepted payment methods -->
-      <button onclick="addPaymentField()">Add Payment</button>
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" name="dueDate" required>
+
+      <label for="paymentMethod">Payment Method:</label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="creditCard">Credit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
     </div>
 
     <!-- Additional Notes -->
-    <div class="additional-notes" id="additionalNotesSection">
+    <div id="additionalNotesSection">
       <h2>Additional Notes</h2>
-      <!-- Input field for additional notes or terms -->
-      <button onclick="addNoteField()">Add Note</button>
+      <textarea id="additionalNotes" name="additionalNotes"></textarea>
     </div>
 
-    <button onclick="submitForm()">Submit Invoice</button>
-  </div>
-</body>
+    <button type="submit">Submit Invoice</button>
+  </form>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
