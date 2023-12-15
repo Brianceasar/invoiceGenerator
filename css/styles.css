@@ -1,0 +1,37 @@
+.navbar {
+  height: 72px;
+  padding: 0 64px 0 64px;
+}
+.navbar-container {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-content: space-between;
+}
+.navbar-container .logo {
+  background-image: url(/images/byte-web-logo.svg);
+  width: 123px;
+  height: 38px;
+}
+.navbar-container .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.navbar-container .nav-links .link {
+  color: #000000;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+.navbar-container .nav-links .cta-button {
+  background-color: #B00D1C;
+  color: #ffffff;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 15px;
+  text-decoration: none;
+}/*# sourceMappingURL=styles.css.map */
