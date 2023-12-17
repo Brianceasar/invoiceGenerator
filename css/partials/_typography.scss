@@ -1,0 +1,32 @@
+
+// H1 Styles
+h1 {
+  @include heading-styles;
+  font-size: $heading-font-size;
+  margin-bottom: 10px;
+}
+
+// H2 Styles
+h2 {
+  @include heading-styles;
+  font-size: $section-heading-font-size;
+  margin-bottom: 10px;
+}
+
+// Paragraph Styles
+p {
+  font-family: $body-font;
+  font-size: $description-font-size;
+  margin-bottom: 20px;
+}
+
+// Small Paragraph Styles
+.small-description {
+  font-family: $body-font;
+  font-size: $small-description-font-size;
+  margin-bottom: 10px;
+}
+
+.highlight-text{
+  color: $primary-color;
+}

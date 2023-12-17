@@ -3,3 +3,26 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-stretch {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+}
+
+@mixin flex-column{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin heading-styles {
+    font-family: $heading-font;
+    font-weight: bold;
+}
