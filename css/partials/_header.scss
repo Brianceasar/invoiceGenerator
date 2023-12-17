@@ -1,20 +1,9 @@
-// Variables
-$header-background-color: #fff;
-$header-content-background: rgba(176, 13, 28, 0.29);
-$header-text-color: #000;
-
-
-
 // Font Sizes
-$heading-font-size: 50px;
-$hero-heading-font-size: 60px;
-$hero-body-font-size: 30px;
-$body-font-size: 25px;
-$link-font-size: 20px;
+
 
 // Header Styles
 .header{
-    height: 900px;
+    height: 740px;
     padding: 0px 64px;
     @include flex-column;
     gap: 80px;

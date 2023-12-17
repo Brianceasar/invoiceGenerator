@@ -12,6 +12,13 @@ h2 {
   margin-bottom: 10px;
 }
 
+h3 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
 p {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
@@ -21,6 +28,12 @@ p {
 .small-description {
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.item-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -57,7 +70,7 @@ p {
 }
 
 .header {
-  height: 900px;
+  height: 740px;
   padding: 0px 64px;
   display: flex;
   flex-direction: column;
@@ -168,9 +181,91 @@ p {
   background-color: #B00D1C;
   color: #ffffff;
   font-family: "Fira Sans", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 15px;
   text-decoration: none;
+  border: solid #000000 3px;
+}
+
+#how-it-works {
+  display: flex;
+  padding: 112px 64px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+#how-it-works .how-it-works-content {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 20px;
+}
+#how-it-works .how-it-works-content .content-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 10px 0 0;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+#how-it-works .how-it-works-content .content-column .content-heading {
+  align-self: stretch;
+  width: 616px;
+  height: 180px;
+}
+#how-it-works .how-it-works-content .timeline-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+  width: 616px;
+  height: 758px;
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+  width: 100%;
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item .timeline-icon {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 16px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item .timeline-icon .box-icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item .timeline-icon .box-icon .vector {
+  width: 36px;
+  height: 40px;
+  left: 6px;
+  top: 4px;
+  position: absolute;
+  background: url(/images/Box-icon.svg);
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item .timeline-icon .divider {
+  height: 100px;
+  width: 2px;
+  background: #000000;
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item .timeline-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+}
+#how-it-works .how-it-works-content .timeline-column .timeline-item .step {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
 }/*# sourceMappingURL=styles.css.map */
