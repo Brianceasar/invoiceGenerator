@@ -1,0 +1,54 @@
+#footer-section {  
+    margin: 100px 50px 50px 50px;
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+  
+      .footer-left {
+        .footer-logo {
+          height: 85px; 
+          width: 275px; 
+          background: url('/images/byte-footer-logo.svg') no-repeat;
+          background-size: cover;
+        }
+      }
+  
+      .footer-right {
+        .newsletter-form {
+          text-align: justify;
+  
+          h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+  
+          form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+  
+            input {
+              padding: 10px;
+              margin-right: 10px;
+              width: 250px; // Adjust the width as needed
+            }
+  
+            button {
+              padding: 10px 20px;
+              background-color: #B00D1C; // Set your button color
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  
+    .rights-reserved {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  

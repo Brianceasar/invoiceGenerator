@@ -1,0 +1,20 @@
+#cta-section {
+    @include byte-card;
+    @include byte-gradient;
+  
+    .cta-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+  
+      .cta-content {
+        text-align: center;
+        color: $white-color;
+        p{
+            padding: 0 0 20px 0 !important;
+        }
+      }
+    }
+  }
+  

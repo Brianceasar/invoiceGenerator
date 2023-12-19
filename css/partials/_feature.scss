@@ -1,0 +1,57 @@
+#feature-section {
+  @include byte-card;
+  @include byte-gradient;
+
+  .feature-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    align-self: stretch;
+
+    .feature-content {
+      display: flex;
+      height: 337px;
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+      flex: 1 0 0;
+
+      .content-column {
+        flex: 1;
+        color: white; 
+
+        .feature-list {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            font-family: $body-font;
+            font-size: $small-font-size;
+            margin-bottom: 10px;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              background: url(/images/sm-box-icon.svg) no-repeat center; 
+              margin-right: 10px;
+              border-radius: 4px;
+            }
+          }
+        }
+        
+      }
+      .image-column {
+        max-width: 100%; 
+        .acc-image {
+          height: 350px;
+          width: 350px;
+          border-radius: 10px; 
+          background: url(/images/accounting.png) no-repeat; 
+        }
+      }
+    }
+  }
+}

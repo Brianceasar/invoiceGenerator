@@ -26,3 +26,16 @@
     font-family: $heading-font;
     font-weight: bold;
 }
+
+@mixin byte-gradient{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.62) 0%, 
+    rgba(0, 0, 0, 0.62) 100%), 
+    linear-gradient(80deg, #B00D1C -1.07%, 
+    rgba(176, 13, 28, 0.00) 42.28%),  
+    lightgray 50% / cover no-repeat;
+}
+@mixin byte-card{
+    padding: 50px 45px;
+    border-radius:50px;
+    margin: 100px 50px 50px 50px;
+}
