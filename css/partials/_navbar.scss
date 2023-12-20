@@ -8,7 +8,7 @@
     @include flex-end;
     justify-content: space-between;
     .logo {
-        background-image: url(/images/byte-web-logo.svg);
+        background-image: url('images/byte-web-logo.svg');
         width: $nav-logo-width;
         height:$nav-logo-height;
     }
