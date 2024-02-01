@@ -1,0 +1,30 @@
+// Colors
+$primary-color: #B00D1C;
+$white-color: #ffffff;
+$black-color: #000000;
+
+// Background and Text Colors
+$dark-background-color: #1e1e1e;
+$deep-brackground-color:#B00D1C;
+$light-background-color: #ffffff;
+
+$dark-text-color: $white-color;
+$light-text-color: $black-color;
+
+
+// Navbar
+$navbar-background-color: $dark-background-color; // Assuming a dark background
+$navbar-height: 72px;
+$navbar-padding: 0 64px 0 64px;
+$navbar-border:0px 0px 1px 0px;
+$navbar-container-height:43px;
+
+// Logo
+$nav-logo-width: 123px;
+$nav-logo-height:38px;
+
+$heading-font-size: 50px;
+$hero-heading-font-size: 60px;
+$hero-body-font-size: 30px;
+$body-font-size: 25px;
+$link-font-size: 20px;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Add your stylesheets here -->
+  <link rel="stylesheet" href="styles.css">
+  <title>Invoice Template Generator</title>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Invoice Template Generator</h1>
+  </header>
+
+  <!-- Form Section -->
+  <section id="form-section">
+    <h2>Fill in Your Details</h2>
+    <form id="invoice-form">
+      <!-- Add form fields here (e.g., company name, address, items) -->
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" name="companyName" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <!-- Add more form fields as needed -->
+
+      <!-- Logo Upload Section (Optional) -->
+      <label for="logo">Upload Company Logo (Optional):</label>
+      <input type="file" id="logo" name="logo" accept="image/*">
+
+      <!-- Invoice Template Preview Section -->
+      <section id="invoice-preview">
+        <h2>Invoice Template Preview</h2>
+        <!-- Display dynamically generated invoice template here -->
+      </section>
+
+      <!-- Download and Share Buttons -->
+      <div id="actions">
+        <button type="button" id="download-btn">Download Invoice</button>
+        <button type="button" id="share-btn">Share Invoice</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer Section (Optional) -->
+  <footer>
+    <p>&copy; 2023 Invoice Template Generator. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

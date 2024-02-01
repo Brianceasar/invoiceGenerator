@@ -1,50 +1,44 @@
 <?php
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "billing"; 
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+require "config.php";
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Process form data
-    $clientName = mysqli_real_escape_string($conn, $_POST['clientName']);
+
+if(isset($_POST["submit"])){
+    $invoice_no=$_POST["invoice_no"];
+    $invoice_date=date("Y-m-d",strtotime($_POST["invoice_date"]));
+    $cname=mysqli_real_escape_string($conn,$_POST["cname"]);
+    $caddress=mysqli_real_escape_string($conn,$_POST["caddress"]);
+    $ccity=mysqli_real_escape_string($conn,$_POST["ccity"]);
+    $grand_total=mysqli_real_escape_string($conn,$_POST["grand_total"]);
     
-    // Process itemized list
-    $itemDescriptions = isset($_POST['itemDescription']) ? $_POST['itemDescription'] : [];
-    $itemCosts = isset($_POST['itemCost']) ? $_POST['itemCost'] : [];
-
-    // Calculate totals
-    $subtotal = array_sum($itemCosts);
-    $tax = $subtotal * 0.1; // Assuming 10% tax, adjust as needed
-    $grandTotal = $subtotal + $tax;
-
-    // Insert data into the database
-    $sql = "INSERT INTO invoices (
-        client_name, 
-        item_description, 
-        item_cost, subtotal, 
-        tax, grand_total
-        ) VALUES (
-            '$clientName', 
-            '" . implode("','", array_map([$conn, 'real_escape_string'], $itemDescriptions)) . "', 
-            '" . implode("','", array_map([$conn, 'real_escape_string'], $itemCosts)) . "', 
-            $subtotal, 
-            $tax, 
-            $grandTotal
-        )";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Invoice submitted successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    $sql="insert into invoice (INVOICE_NO,INVOICE_DATE,CNAME,CADDRESS,CCITY,GRAND_TOTAL) values ('{$invoice_no}','{$invoice_date}','{$cname}','{$caddress}','{$ccity}','{$grand_total}') ";
+    if($conn->query($sql)){
+      $sid=$conn->insert_id;
+      
+      $sql2="insert into invoice_products (SID,PNAME,PRICE,QTY,TOTAL) values ";
+      $rows=[];
+      for($i=0;$i<count($_POST["pname"]);$i++)
+      {
+        $pname=mysqli_real_escape_string($conn,$_POST["pname"][$i]);
+        $price=mysqli_real_escape_string($conn,$_POST["price"][$i]);
+        $qty=mysqli_real_escape_string($conn,$_POST["qty"][$i]);
+        $total=mysqli_real_escape_string($conn,$_POST["total"][$i]);
+        $rows[]="('{$sid}','{$pname}','{$price}','{$qty}','{$total}')";
+      }
+      $sql2.=implode(",",$rows);
+      if($conn->query($sql2)){
+        echo "<div class='alert alert-success'>Invoice Added Successfully. <a href='print.php?id={$sid}' target='_BLANK'>Click </a> here to Print Invoice </div> ";
+      }else{
+        echo "<div class='alert alert-danger'>Invoice Added Failed.</div>";
+      }
+    }else{
+      echo "<div class='alert alert-danger'>Invoice Added Failed.</div>";
     }
-}
+  }
 
 $conn->close();
 

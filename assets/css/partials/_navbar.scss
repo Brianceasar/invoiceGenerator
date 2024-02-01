@@ -1,0 +1,28 @@
+
+// Navbar Styles
+.navbar {
+  height: $navbar-height;
+  padding: $navbar-padding;
+  &-container{
+    height: $navbar-container-height;
+    @include flex-end;
+    justify-content: space-between;
+    .logo {
+        background-image: url('/assets/images/byte-web-logo.svg');
+        width: $nav-logo-width;
+        height:$nav-logo-height;
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: $link-margin;
+        .link {
+            color: $link-color;
+            font-family: $heading-font;
+            font-size: $link-font-size;
+            font-weight: $link-font-weight;
+        }
+    }
+  }
+}
+

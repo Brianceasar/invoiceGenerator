@@ -1,0 +1,87 @@
+#how-it-works {
+    display: flex;
+    // width: 1440px;
+    padding: 112px 64px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    height: 900px;
+    .how-it-works-content {
+        display: flex;
+        align-items: flex-start;
+        align-self: stretch; 
+        gap: 20px;
+      .content-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 10px 0 0;
+        flex: 1 0 0;
+        align-self: stretch;
+        .content-heading{
+            align-self: stretch;
+            width: 616px;
+            height: 180px;
+        }
+      }
+  
+      .timeline-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        flex: 1 0 0;
+        width: 616px;
+        height: 758px;
+        .timeline-item{
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            align-self: stretch;
+            width: 100%;
+            .timeline-icon {
+                display: flex;
+                align-items: center; /* Center items vertically */
+                gap: 16px;
+                flex-direction: column;
+                justify-content: flex-start;
+                .box-icon {
+                  width: 48px;
+                  height: 48px;
+                  position: relative;
+              
+                  .vector {
+                    width: 45px;
+                    height: 45px;
+                    left: 6px;
+                    top: 4px;
+                    position: absolute;
+                    background: url('images/Box-icon.svg');
+                  }
+                }
+              
+                .divider {
+                  height: 100px; 
+                  width: 2px;
+                  background: $black-color;
+                }
+              }
+            .timeline-copy{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                flex: 1 0 0;
+            }
+            .step {
+                display: flex;
+                align-items: flex-start;
+                gap: 40px;
+                align-self: stretch;
+            }
+    
+        }
+  
+      }
+    }
+  }

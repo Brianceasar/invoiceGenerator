@@ -1,0 +1,29 @@
+// Fonts
+$heading-font: 'Fira Sans', sans-serif;
+$body-font: 'Montserrat', sans-serif;
+
+//Font sizes
+$small-font-size: 20px;
+$regular-font-size: 25px;
+$large-font-size: 30px;
+$heading-font-size: 60px;
+$section-heading-font-size: 50px;
+$description-font-size: 30px;
+$small-description-font-size: 25px;
+
+//font weight
+$regular:400;
+$bold:700;
+
+// Links
+$link-color: $light-text-color;
+$link-font-size: 18px;
+$link-font-weight: 400;
+$link-margin: 32px;
+
+// Mixin for setting font styles
+@mixin link-style($heading-font, $small-font-size, $regular) {
+  font-family: $heading-font;
+  font-size: $small-font-size;
+  font-weight: $regular;
+}
